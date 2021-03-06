@@ -49,8 +49,8 @@ steps:
     publishRunAttachments: true
 
 - script: |
+    ls /home/vsts/work/1/s/libraries/python
     cd $(Build.Repository.LocalPath)/libraries/python/demorepo
-    ls ../
     python3 setup.py sdist bdist_wheel
     ls dist/
   displayName: 'Build Python Wheel for Libs'
