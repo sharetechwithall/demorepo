@@ -7,6 +7,9 @@ trigger:
 pool:
   name: Hosted Ubuntu 1604
 
+variables:
+- group: Variable-Group-db
+
 steps:
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.7'
