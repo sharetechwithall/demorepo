@@ -61,6 +61,7 @@ steps:
 
     mkdir -p $(Build.BinariesDirectory)/libraries/python/libs
     cp $(Build.Repository.LocalPath)/dist/*.* $(Build.BinariesDirectory)/libs
+    $(Build.Repository.LocalPath)
 
     mkdir -p $(Build.BinariesDirectory)/cicd-scripts
     cp $(Build.Repository.LocalPath)/cicd-scripts/*.* $(Build.BinariesDirectory)/cicd-scripts
