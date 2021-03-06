@@ -49,8 +49,6 @@ steps:
     publishRunAttachments: true
 
 - script: |
-    ls /home/vsts/work/1/s/
-    export PATH=$PATH:/home/vsts/work/1/s/
     cd $(Build.Repository.LocalPath)/
     python3 setup.py sdist bdist_wheel
     ls dist/
@@ -60,8 +58,7 @@ steps:
     git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' $(Build.BinariesDirectory)
 
     mkdir -p $(Build.BinariesDirectory)/libraries/python/libs
-    cp $(Build.Repository.LocalPath)/dist/*.* $(Build.BinariesDirectory)/libs
-    $(Build.Repository.LocalPath)
+    cp $(Build.Repository.LocalPath)/libraries/python/demorepo/dist/*.* $(Build.BinariesDirectory)/libraries/python/libs
 
     mkdir -p $(Build.BinariesDirectory)/cicd-scripts
     cp $(Build.Repository.LocalPath)/cicd-scripts/*.* $(Build.BinariesDirectory)/cicd-scripts
