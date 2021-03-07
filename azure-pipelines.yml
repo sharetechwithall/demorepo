@@ -56,6 +56,8 @@ steps:
 
 - script: |
     git diff --name-only --diff-filter=AMR HEAD^1 HEAD | xargs -I '{}' cp --parents -r '{}' $(Build.BinariesDirectory)
+    ls $(Build.Repository.LocalPath)/
+    ls $(Build.Repository.LocalPath)/libraries/
 
     mkdir -p $(Build.BinariesDirectory)/libraries/python/libs
     cp $(Build.Repository.LocalPath)/libraries/python/demorepo/dist/*.* $(Build.BinariesDirectory)/libraries/python/libs
