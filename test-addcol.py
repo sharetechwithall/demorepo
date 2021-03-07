@@ -1,8 +1,8 @@
 # test-addcol.py
 import pytest
 
-from spark import get_spark
-from appendcol import with_status
+from myspark import get_spark
+from addcol import with_status
 
 class TestAppendCol(object):
 
